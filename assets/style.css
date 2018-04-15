@@ -1,0 +1,256 @@
+body, html {    /*the outer layer of the site and global style attributes*/
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin: 0px;
+height: 100%;
+width: 100%;
+background: #f7f5f2;
+position: relative;
+}
+
+/* Utility Stylesheets */
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+.clear {
+clear: both;
+}
+
+.img-scaled {
+width: 100%;
+}
+
+
+/* Question 1 */
+
+#question4 {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Press Start 2P';
+    background: #2d2d2d;
+}
+
+#q4-player {
+    position: relative;
+    top: 200px;
+    left: 10px;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+
+#q4-player img, .block img {
+    height: 100%;
+}
+
+.block {
+    height: 100px;
+    width: 100px;
+    background: green;
+    left: 101%;
+    position: absolute;
+    transition: 0.4s;
+}
+
+.tint {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#q4-game-score {
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+#q4-overlay {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background: black;
+    z-index: 1;
+    opacity: 0.6;
+    display: none;
+}
+
+#q4-game-over, #nice {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    font-size: 80px;
+    color: red;
+    display: none;
+    z-index: 3;
+    text-shadow: 5px 7px 0px rgb(110, 0, 0);
+}
+
+#nice {
+    font-size: 60px;
+}
+
+#q4-end-score {
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+    text-shadow: none;
+    text-align: center;
+}
+
+#q4-play-again {
+    margin-top: 40px;
+    font-size: 30px;
+    color: white;
+    background: red;
+    padding: 10px 20px;
+    width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 10px 10px 0px 5px rgb(128, 0, 0);
+    text-shadow: 3px 3px 0px rgb(128, 0, 0);
+    cursor: pointer;
+}
+
+#q4-play-again:hover {
+    padding: 12px 22px;
+    margin-top: 36px;
+}
+
+.blue-animation {
+    animation: glow-blue 0.5s linear 0s infinite alternate;
+}
+
+.red-animation {
+    animation: glow-red 0.5s linear 0s infinite alternate;
+}
+
+.end {
+    filter: blur(10px);
+}
+
+@keyframes glow-red {
+    from {
+        box-shadow: 0 0px 10px 3px rgba(255, 0, 0,0.08);
+        background: rgba(255, 0, 0, 0.08);
+    } to {
+        box-shadow: 0 0px 12px 5px rgba(255, 0, 0,0.5);
+        background: rgba(255, 0, 0, 0.5);
+    }
+}
+
+@keyframes glow-blue {
+    from {box-shadow: 0 0px 10px 3px rgba(89, 228, 247,0.08);} 
+    to {box-shadow: 0 0px 12px 5px rgba(89, 228, 247,0.7);}
+}
+
+
+/* ---------- */
+
+#q2-add-item {
+    height: 150px;
+    width: 600px;
+    background: grey;
+    position: relative;
+    top: 50px;
+    margin: 0 auto;
+}
+
+.q2-input {
+    height: 30px;
+    width: 500px;
+    margin: 0 auto;
+    background: red;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.q2-input > input {
+    position: relative;
+}
+
+#q2-input-submit {
+    position: relative;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    left: 450px;
+    top: 5px;
+    background: white;
+}
+
+#q2-input-submit:active {
+    background: red;
+}
+
+#q2-items-container {
+    z-index: 1;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    top: 60px;
+}
+
+.card-item {
+    height: 100px;
+    width: 300px;
+    background: grey;
+    margin-right: 20px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.card-name {
+    font-size: 20px;
+}
+
+.delete-item {
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background: red;
+    z-index: 10;
+    display: inline-block;
+}
+
+#q2-subtotal {
+    position: absolute;
+    top: 100px;
+    left: 90px;
+}
+
+.in-cart {
+    background: blue !important;
+}
+
+.add-to-cart {
+    height: 30px;
+    width: 30px;
+    background: black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+
+
+
+
