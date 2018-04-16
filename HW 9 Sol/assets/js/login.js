@@ -2,7 +2,7 @@
 
 function account_clear(current_account, farmers){
 	Farmer.store_farmers(farmers);
-	// code here
+	sessionStorage.setItem("current_market_user", current_account.username);
 	window.open("global_market.html", "_self");
 }
 

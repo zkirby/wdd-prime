@@ -1,5 +1,3 @@
-// QUESTION 2.1 Found below
-// QUESTION 2.2 Found in make_event method. 
 class Event {
 	constructor(topics={}, store={}) {
 		this.topics = topics;
@@ -15,7 +13,9 @@ class Event {
 	}
 
 	publish(topic, data) {
-		// QUESTION 2.1 
+		if(this.topics[topic]){
+			this.topics[topic].map((fn)=>(fn(data)));
+		}
 	}
 
 	register(topic, info) {
@@ -42,8 +42,11 @@ class Event {
 				let seller = farmers.get(info["seller"]);
 				let item = new Item(...info["item"]);
 
-				// QUESTION 2.2
-				return // RETURN THE SUBSCRIBER METHOD !!!
+				return (x)=>{
+					if(buyer.check_buy(x)){
+						seller.sell_item(x);
+					}
+				};
 			})
 		}
 		return new Event(topics, store);
@@ -53,6 +56,7 @@ class Event {
 		sessionStorage.setItem("event", JSON.stringify(event.store));
 	}
 }
+
 
 
 

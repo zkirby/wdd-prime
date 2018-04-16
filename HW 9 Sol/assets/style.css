@@ -1,0 +1,367 @@
+body, html {    /*the outer layer of the site and global style attributes*/
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin: 0px;
+height: 100%;
+width: 100%;
+background: #f7f5f2;
+position: relative;
+}
+
+/* Utility Stylesheets */
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+.clear {
+clear: both;
+}
+
+.img-scaled {
+width: 100%;
+}
+
+/* INDEX */
+.question {
+    background: white;
+    padding: 18px;
+    font-size: 12px;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 700;
+    color: #4a4a4a;
+    cursor: pointer;
+}
+#index {
+    width: 240px;
+    position: absolute;
+    left: calc(50% - 120px);
+    top: calc(50% - 206px);
+}
+
+/* Market Admin */
+#wddp-ma {
+    margin: 64px auto;
+    background: white;
+    padding: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    position: relative;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#wddp-ma > h2 {
+    position: absolute;
+    top: calc(-2em - 12px);
+    left: 0;
+}
+
+#wddp-ma-add-item {
+    position: relative;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 48px;
+}
+
+.wddp-ma-input {
+    margin: 12px 0;
+}
+
+.wddp-ma-input > input {
+    line-height: 18px;
+    padding: 0px 6px;
+    display: block;
+}
+
+#wddp-ma-input-submit {
+    background: #78c272;
+    text-align: center;
+    padding: 6px 12px;
+    color: white;
+    margin-top: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#wddp-ma-current-items {
+    margin-left: 12px;
+}
+
+#wddp-ma-items-container, #wddp-ma-items-container div {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card-item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    min-width: 84px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    position: relative;
+}
+
+.delete-item {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.card-item:hover {
+    background: #f7f5f2;
+}
+
+.card-item:hover .delete-item {
+    opacity: 1;
+}
+
+.delete-item:hover {
+    transform: rotate(180deg);
+}
+
+.card-name {
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+
+#wddp-ma-subtotal {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.in-cart, .in-cart:hover {
+    background: #78c272;
+    color: white;
+}
+
+.card-watch {
+    height: 30px;
+    width: 30px;
+    background: green;
+    border-radius: 100px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card-watch:hover {
+    opacity: 1;
+}
+
+.add-to-cart {
+    height: 30px;
+    width: 30px;
+    background: url(images/cart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-to-cart:hover {
+    transform: scale(1.1);
+}
+
+/* Nav */
+#wddp-nav {
+    width: 100vw;
+    height: 10vh;
+}
+
+.wddp-logo {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background: green;
+    border-radius: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: 0.2s;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.wddp-logo:hover {
+    opacity: 1;
+}
+
+.wddp-account {
+    display: inline-block;
+    right: 3vw;
+    top: 5vh;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.wddp-account:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Farmer */
+.farmer-card {
+    height: 100px;
+    width: 300px;
+    background: grey;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 20px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.farmer-card > img {
+    height: 50px;
+    border-radius: 100px;
+}
+
+.farmer-card:hover {
+    opacity: 1;
+}
+
+.farmer-visit-farm {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    left: 10px;
+    bottom: 15px;
+    background: green;
+    cursor: pointer;
+}
+
+.farmer-visit-farm:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Login */
+#wddp-login {
+    background: grey;
+    height: 30vh;
+    width: 40vw;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+#wddp-login div {
+    position: relative;
+    top: 40px;
+}
+
+#wddp-login-submit {
+    height: 30px;
+    background: green;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#wddp-login-submit:hover {
+    opacity: 1;
+}
+
+#wddp-login-error {
+    color: red;
+    height: 100px;
+    width: 100vw;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 40px;
+    position: relative;
+    bottom: 40px;
+    display: none;
+    right: 20px;
+}
+
+/* Global Market */
+.wddp-gm-name {
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    height: 50px;
+    width: 100vw;
+}
+
+.wddp-gm-market {
+    height: 80vh;
+    width: 80vw;
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+}
+
+/* User Market */
+#wddp-mu > h2{
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+}
+
+#wddp-mu-cash {
+    width: 100vw;
+    text-align: center;
+}
+
+.wddp-shopping-cart {
+    display: inline-block;
+    height: 100px;
+    width: 30vw;
+    position: relative;
+    left: 400px;
+}
+
+.wddp-mu-buy-item {
+    display: inline-block;
+    height: 40px;
+    width: 10vw;
+    background: green;
+    cursor: pointer;
+    opacity: 0.8;
+    position: relative;
+    left: 300px;
+}
+
+.wddp-mu-buy-item:hover {
+    opacity: 1;
+}
+
+#wddp-mu-watched {
+    color: red;
+    position: absolute;
+    height: 10vh;
+    width: 100vw;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto;
+    display: none;
+    bottom: 50%;
+}
+
+
+
+
+
+
+
+

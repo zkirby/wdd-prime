@@ -45,49 +45,30 @@
 				<a href="assets/hw8.zip"><div class="download">Download File</div></a>
 				<p class="caption">You must NOT make any changes to HTML/CSS document in these questions. All of your changes should only be in the JS files</p>
 
-				<p class="body-header">Question 1: Session/Local Storage</p>
-				<p>Relevant readings: <a href="https://stackoverflow.com/questions/2696692/setinterval-vs-settimeout">session/local storage</a>.</p>
+				<p class="body-header">Question 1: Login</p>
+				<p>Relevant readings: <a href="https://www.w3schools.com/html/html5_webstorage.asp">session/local storage</a>.</p>
 				<p>While it's not necessary to read all of the articles in their entirety, it is necessary to understand their content/main ideas for this part of the assignment.</p>
 
-				<p></p>
+				<p>Now that we have the basics of our admin panel down, management wants us to add a login system to register users. Unfortunately, we don't have funding for AWS so we'll have to settle for a simulated database via local and session storage. We'll reserve local storage for farmer accounts <b>only</b> and we'll use session for everything else.</p>
 
-				<p>PART 2: Make <code>$(nice)</code> fade out one second after the <code>congrats</code> function is called.</p>
+				<p><b>TASK</b>: Navigate to login.js. Use either session or local storage to save current_account.username to the key "current_market_user" in the 'database'. This should only be one line of code, don't overthink it lol.</p>
 				<br />
 
-				<p class="body-header">Question 2: WDD Prime</p>
+				<p class="body-header">Question 2: Watchers</p>
 
-				<p>Relevant readings: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">classes (take a good look at get/set hint hint)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">symbols (don't read too in-depth, we will come back to symbols, just look at Symbol.toPrimitive)</a>.</p>
+				<p>Relevant readings: <a href="https://msdn.microsoft.com/en-us/magazine/hh201955.aspx">Pub/Sub</a>.</p>
 
 				<p>PREAMBLE:<br>
-				Now that you have your footing with JavaScript, we will spend the rest of the homeworks developing a hip new online grocery store to compete with Amazon Prime!</p>
+				Now that we have a working login system, we want to add some cool features to WDD-Prime! One feature we would like to add is the ability to 'watch' an item and automatically purchase it when it dips below a certain threshold (called the price_limit) because everytime an item is added, all other items a decreased in price by 5%</p>
 
-				<p>Our online store allows anyone to create a 'market' where they can add food produce they want to sell on the world wide web and also visit other people's markets. The owner of a market is called a 'farmer'</p>
-
-				<p>Here's why it's better than Amazon Prime: Everytime a farmer adds a food item to sell on their market, WDD Prime automatically discounts all previously added item's by 5%! </p>
-
-				<p>Today we will be working on the 'admin' panel for a farmer's market, but later we will add a login system, a way to view other markets, the ability to 'watch' items from other markets and automatically purchase the item when it dips below a certain price, and a few other cool features!</p>
+				<p>We will use a pub/sub design pattern to implement this. A typical pub/sub pattern has an event class (written for you) that simply tracks topics/events. To subscribe to a topic, just call subscribe with the topic name and a function that takes a single argument (data). When the event is published (i.e. an update relevant to the event happens) all functions that are subscribed to the topic are called and passed the new data.</p>
 
 				<p>TASK:
-				We will be essentially making our own custom html tag via a class. Fill in the Item class so that it satisfies the following properties: </p>
-
 				<ol>
-					<li>An item must have a way to <b>get</b> and <b>set</b> nutrients such that <code>item.nutrients</code> returns <code>"[food name] has nutrients: [nutrient 1], [nutrient 2], ..."</code> and <code>item.nutrients = new_nutrients</code> adds all the nutrients in <code>new_nutrients</code> to the <code>nutrients</code> attribute of the item. If <code>new_nutrients</code> is a single item (i.e. a string not a list), it simply adds that single item to list </li>
-					<li>An item must have a way to <b>get</b> and <b>set</b> the price of an item such that <code>item.price</code> returns the price of that item and <code>item.price = item.price</code> updates the price to be the *new* discounted by 5% price (note that a 5% discount means <code>new_price = old_price - old_pirce * 5%</code>)</li>
-					<li>Two items added together returns the combined price of the items. E.g. <code>t = new Item('t', 3, ''); g = new Item('b', 4, ''); console.log(t + b)</code> prints 7 to the console</li>
-					<li>Finally, the item must have a render method. The render method must return an HTML String (i.e. a string of valid html such as "&ltdiv&gt Hello &lt/div&gt") that has the <b>exact</b> following structure:<br />
-					<p>
-						<ul>
-							<li>div w/ class 'card-item', optional class 'active_class' when an item is in the shopping cart, and data-id that is equal to the id of the item (i.e. data-id=[the item's id])</li>
+					<li>Part 1: In market_object.js, Finish the publish method. A call to publish(topic, data) must call all functions subscribed to the topic and pass data to them</li>
+					<li>Part 2: In market_admin.js, market_user.js, and market_objects.js fill in the publish/subscribe calls so that a market_user can subscribe to an item on a market_owner's market and automatically buy it when it dips below the market_user's price_limit. HINT: .check_buy(item) and .sell_item(item) look pretty useful in the Farmer object. NOTE: It is ok to subscribe to an item (and thus buy an item) multiple times. It's an easy fix, but we won't worry about it for this hw. Also don't worry about storing anything, it's all done for you. </li>
+				</ol> </p>
 
-						<li>-> a nested div with class 'card-name' and the text = the name of the item</li>
-						<li>-> a nested div with class 'card-price' and the text = the price of the item</li>
-						<li>-> this nested div: "&ltdiv class='delete-item'&gt&times;&lt/div&gt"</li>
-						<li>-> this nested div: "&ltdiv class='add-to-cart'&gt&lt/div&gt"</li>
-						</ul>
-					</p>
-
-					</li>
-				</ol>
 			</div>
 		</div>
 		<div id="submission">
@@ -97,11 +78,17 @@
 				<!-- REQUIRED FILES -->
 				<ul>
 					<li>index.html</li>
-					<li>question1.html</li>
-					<li>question2.html</li>
+					<li>account.html</li>
+					<li>global_market.html</li>
+					<li>login.html</li>
+					<li>market_admin.html</li>
+					<li>market_user.html</li>
 					<li>assets/css/style.css</li>
-					<li>assets/js/style_q1.js</li>
-					<li>assets/js/style_q2.js</li>
+					<li>assets/js/login.js</li>
+					<li>assets/js/global_market.js</li>
+					<li>assets/js/market_admin.js</li>
+					<li>assets/js/market_user.js</li>
+					<li>assets/js/account.js</li>
 				</ul>
 				<p>Your assignment must be submitted as a <strong>zip</strong> file. Submission will automatically fail if your submission does not contain the index.html or if is not a zip file.</p>
 			</div>

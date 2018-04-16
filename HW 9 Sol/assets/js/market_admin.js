@@ -3,7 +3,7 @@
 function update_item_prices(items, event) {
 	for (let item of Object.values(items)) {
 		item.price = item.price;
-		// code here
+		event.publish(item.id, item);
 	}
 }
 

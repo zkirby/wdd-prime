@@ -1,6 +1,4 @@
-// ********************************************************
-// QUESION 2.2 CODE is in $("#wddp-mu-items") click handler
-// ********************************************************
+// Don't edit this code
 $(document).ready(function() {
 
 	const farmers = Farmer.get_farmers();
@@ -36,11 +34,11 @@ $(document).ready(function() {
 
 		$("#wddp-mu-watched").show().fadeOut(1000);
 
-		/*  Question 2.2 Code Here START */
-
-
-		/*  Question 2.2 Code Here END */
-
+		event.subscribe(id, (x)=>{
+			if (market_user.check_buy(x)) {
+				market_owner.sell_item(x);
+			}
+		});
 		event.register(id, {
 							"buyer": market_user.username, 
 							"seller": market_owner.username, 
